@@ -7,6 +7,7 @@ const App = () => {
 
   //los Hooks se colocan en la parte superior
 
+
   const [modalVisible, setModalVisible]=useState(false)
   console.log(modalVisible)
 
@@ -22,13 +23,15 @@ const App = () => {
       <Text style={styles.titulo}>
         Administrados de citas <Text style={styles.tituloBold}>veterinaria</Text>
       </Text>
-      <Pressable Onpress={()=>setModalVisible(true)} style={styles.bntnuevacita}>
+      <Pressable Onpress={()=>setModalVisible(!modalVisible)} style={styles.bntnuevacita}>
       <Text style={styles.btnextnuevascitas}>Nueva Cita </Text>
       </Pressable>
 
       <Formulario
-      modalVisible={modalVisible}/>
-    </View>  
+      modalVisible={modalVisible}
+      setModalVisible={setModalVisible}
+      />
+    </View>
     );
 }
 
